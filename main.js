@@ -90,3 +90,43 @@ if (multipleText) {
   multipleText.textContent = '';
   rotateWords();
 }
+
+/* ================= MOBILE MENU ================= */
+
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+
+if(menuIcon){
+    menuIcon.onclick = () => {
+        navbar.classList.toggle('active');
+
+        if(menuIcon.classList.contains('bx-menu')){
+            menuIcon.classList.replace('bx-menu','bx-x');
+        }else{
+            menuIcon.classList.replace('bx-x','bx-menu');
+        }
+    }
+}
+
+/* CLOSE MENU ON CLICK */
+
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.onclick = () => {
+        navbar.classList.remove('active');
+        menuIcon.classList.replace('bx-x','bx-menu');
+    }
+});
+
+/* HEADER SHADOW ON SCROLL */
+
+window.addEventListener('scroll', () => {
+
+    const header = document.querySelector('.header');
+
+    if(window.scrollY > 50){
+        header.style.boxShadow =
+        "0 0 25px rgba(47,201,255,0.15)";
+    }else{
+        header.style.boxShadow = "none";
+    }
+});
