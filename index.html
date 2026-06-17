@@ -414,19 +414,19 @@
 
             <div class="social-icons">
 
-                <a href="#">
+                <a href="https://github.com/saurabhraj80923-dotcom" target="_blank">
                     <i class='bx bxl-github'></i>
                 </a>
 
-                <a href="#">
+                <a href="https://www.linkedin.com/in/your-profile" target="_blank">
                     <i class='bx bxl-linkedin'></i>
                 </a>
 
-                <a href="#">
+                <a href="https://www.instagram.com/er_.saurabh_yadav" target="_blank">
                     <i class='bx bxl-instagram'></i>
                 </a>
 
-                <a href="#">
+                <a href="mailto:saurabhraj80923@gmail.com">
                     <i class='bx bx-envelope'></i>
                 </a>
 
@@ -434,30 +434,65 @@
 
         </div>
 
+        <div class="contact-status-card">
+
+    <div class="status-terminal">
+
+        <span>> Secure Channel Established...</span>
+        <span>> Threat Monitoring Active...</span>
+        <span>> Awaiting Secure Message...</span>
+
+    </div>
+
+    <div class="contact-info-grid">
+
+        <div class="info-card">
+            <h4>Email</h4>
+            <p>saurabhraj80923@gmail.com</p>
+        </div>
+
+        <div class="info-card">
+            <h4>Response</h4>
+            <p>Within 24 Hours</p>
+        </div>
+
+        <div class="info-card">
+            <h4>Status</h4>
+            <p>Available For Projects</p>
+        </div>
+
+        <div class="info-card">
+            <h4>Security</h4>
+            <p>Protected Contact Channel</p>
+        </div>
+
+    </div>
+
+</div>
+
         <!-- RIGHT SIDE -->
 
         <div class="contact-right">
 
-            <form action="#">
-
+            <form id="contact-form">
                 <div class="input-box">
-                    <input type="text" placeholder="Your Name">
+                    <input type="text" name="name" placeholder="Your Name" required>
                 </div>
 
                 <div class="input-box">
-                    <input type="email" placeholder="Your Email">
+                    <input type="email" name="email" placeholder="Your Email" required>
                 </div>
 
                 <div class="input-box">
-                    <input type="text" placeholder="Subject">
+                    <input type="text" name="subject" placeholder="Subject" required>
                 </div>
 
                 <div class="input-box">
-                    <textarea placeholder="Your Message"></textarea>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
                 </div>
 
                 <button type="submit" class="contact-btn">
-                    Send Message
+                  Send Message
                 </button>
 
             </form>
@@ -467,13 +502,50 @@
     </div>
 
 </section>
-    <script>
+<script>
 let menu = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
     navbar.classList.toggle('active');
 }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+emailjs.init("QNh-1F9HjqbBYFnU9");
+
+document.getElementById("contact-form")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_sozmu3s",
+        "template_8eg27iw",
+        this
+    )
+    .then(function() {
+
+        alert("✅ Message Sent Successfully!");
+
+        document
+        .getElementById("contact-form")
+        .reset();
+
+    }, function(error) {
+
+        alert("❌ Failed To Send Message");
+
+        console.log(error);
+
+    });
+
+});
+
 </script>
 </body>
 </html> 
