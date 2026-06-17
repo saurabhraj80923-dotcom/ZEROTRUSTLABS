@@ -1610,3 +1610,134 @@ body{
 }
 
 }
+
+/* =====================================
+   PREMIUM CONTACT SECTION FINAL
+===================================== */
+
+.contact-status-card{
+
+    margin-top:3rem;
+}
+
+.status-terminal{
+
+    background:#050b18;
+
+    border:1px solid rgba(47,201,255,0.12);
+
+    border-radius:2rem;
+
+    padding:2rem;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:1rem;
+
+    margin-bottom:2rem;
+
+    box-shadow:
+    0 0 25px rgba(47,201,255,0.08);
+}
+
+.status-terminal span{
+
+    color:#2fc9ff;
+
+    font-size:1.4rem;
+
+    font-family:monospace;
+}
+
+.contact-info-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:1.5rem;
+}
+
+.info-card{
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02));
+
+    border:1px solid rgba(47,201,255,0.08);
+
+    border-radius:1.8rem;
+
+    padding:2rem;
+
+    transition:.3s ease;
+
+    backdrop-filter:blur(12px);
+}
+
+.info-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px rgba(47,201,255,0.15);
+}
+
+.info-card h4{
+
+    color:#2fc9ff;
+
+    font-size:1.7rem;
+
+    margin-bottom:1rem;
+}
+
+.info-card p{
+
+    color:#c7d3e0;
+
+    font-size:1.4rem;
+
+    line-height:1.6;
+}
+
+/* ===== CONTACT BUTTON ===== */
+
+.contact-btn{
+
+    background:
+    linear-gradient(
+    90deg,
+    #2fc9ff,
+    #00bfff);
+
+    border:none;
+
+    box-shadow:
+    0 0 20px rgba(47,201,255,0.2);
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+.contact-info-grid{
+
+    grid-template-columns:1fr;
+}
+
+.status-terminal{
+
+    padding:1.8rem;
+}
+
+.info-card{
+
+    padding:1.8rem;
+}
+
+}
