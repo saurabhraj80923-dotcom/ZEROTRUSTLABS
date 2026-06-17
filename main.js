@@ -91,7 +91,6 @@ if (multipleText) {
   rotateWords();
 }
 
-
 /* ===== MOBILE MENU ===== */
 
 const menuIcon = document.querySelector('#menu-icon');
