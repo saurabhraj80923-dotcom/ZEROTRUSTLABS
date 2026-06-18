@@ -105,3 +105,25 @@ menuIcon.onclick = () => {
 };
 
 }
+
+// Menu ke bahar click karne par close ho jayega
+document.addEventListener('click', function(e) {
+
+    if (
+        navbar.classList.contains('active') &&
+        !navbar.contains(e.target) &&
+        !menuIcon.contains(e.target)
+    ) {
+        navbar.classList.remove('active');
+    }
+
+});
+
+// Kisi menu link par click karne ke baad bhi menu close
+document.querySelectorAll('.navbar a').forEach(link => {
+
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+    });
+
+});
