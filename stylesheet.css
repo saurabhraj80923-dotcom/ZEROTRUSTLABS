@@ -1741,3 +1741,110 @@ body{
 }
 
 }
+@media (max-width: 768px){
+
+    .about-content{
+        text-align: center;
+    }
+
+    .about .heading{
+        text-align: center;
+        font-size: 3rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .bar .info span {
+        font-size: 2.3rem !important;
+    }
+
+    .bar {
+        grid-template-columns: 4rem 1fr;
+        gap: 1.5rem;
+    }
+
+    .bar i {
+        font-size: 3.8rem !important;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .certification-page .heading {
+        font-size: 3.5rem;
+        padding: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .certification-page .heading::before,
+    .certification-page .heading::after {
+        display: none;
+    }
+
+    .certification-card h3 {
+        font-size: 2.8rem;
+    }
+
+    .certification-card p {
+        font-size: 1.6rem;
+    }
+
+    .certification-page {
+        overflow-x: hidden;
+    }
+}
+
+/* ===== CYBER RATING SYSTEM ===== */
+
+.rating-container{
+    margin-top:2rem;
+    text-align:center;
+}
+
+.rating-title{
+    display:block;
+    font-size:1.8rem;
+    color:#fff;
+    margin-bottom:1rem;
+    font-weight:600;
+}
+
+.rating-stars{
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content:center;
+    gap:0.8rem;
+}
+
+.rating-stars input{
+    display:none;
+}
+
+.rating-stars label{
+    font-size:3.5rem;
+    color:rgba(255,255,255,0.25);
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.rating-stars label:hover,
+.rating-stars label:hover ~ label,
+.rating-stars input:checked ~ label{
+    color:#00e5ff;
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        0 0 40px #00e5ff;
+    transform:scale(1.15);
+}
+
+.rating-text{
+    margin-top:1rem;
+    font-size:1.4rem;
+    color:rgba(255,255,255,0.7);
+}
