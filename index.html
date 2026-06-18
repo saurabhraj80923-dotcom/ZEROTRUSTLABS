@@ -218,7 +218,7 @@
         </div>
     </section>
 
-    <script src="main.js"></script>
+<script src="main.js"></script>
 <!-- PROJECT SECTION START -->
 
 <section class="projects" id="projects">
@@ -234,9 +234,7 @@
         <!-- LEFT -->
         <div class="project-left">
 
-            <div class="shield-glow">
-                <i class='bx bx-shield-quarter'></i>
-            </div>
+            
 
             <h3>Something Great is</h3>
 
@@ -377,7 +375,7 @@
 
 </section>
 
-<!-- PROJECT SECTION END -->
+<!-- CERTIFICATION SECTION START -->
 
 <section class="certification-page" id="Certifications">
     <div class="certification-box">
@@ -491,6 +489,29 @@
                     <textarea name="message" placeholder="Your Message" required></textarea>
                 </div>
 
+                <div class="rating-container">
+    <label class="rating-title">Rate ZeroTrust Labs</label>
+
+    <div class="rating-stars">
+        <input type="radio" name="rating" id="star5" value="5">
+        <label for="star5">★</label>
+
+        <input type="radio" name="rating" id="star4" value="4">
+        <label for="star4">★</label>
+
+        <input type="radio" name="rating" id="star3" value="3">
+        <label for="star3">★</label>
+
+        <input type="radio" name="rating" id="star2" value="2">
+        <label for="star2">★</label>
+
+        <input type="radio" name="rating" id="star1" value="1">
+        <label for="star1">★</label>
+    </div>
+
+    <p class="rating-text">Your feedback helps improve ZeroTrust Labs.</p>
+</div>
+
                 <button type="submit" class="contact-btn">
                   Send Message
                 </button>
@@ -518,25 +539,37 @@ menu.onclick = () => {
 
 emailjs.init("QNh-1F9HjqbBYFnU9");
 
-document.getElementById("contact-form")
-.addEventListener("submit", function(e){
+document.getElementById("contact-form").addEventListener("submit", function(e){
 
     e.preventDefault();
+
+    const form = this;
 
     emailjs.sendForm(
         "service_sozmu3s",
         "template_8eg27iw",
-        this
+        form
     )
     .then(function() {
 
+        emailjs.send(
+            "service_sozmu3s",
+            "template_ft7gmi3",
+            {
+                name: form.name.value,
+                email: form.email.value,
+                subject: form.subject.value,
+                message: form.message.value,
+                rating: form.rating.value
+            }
+        );
+
         alert("✅ Message Sent Successfully!");
 
-        document
-        .getElementById("contact-form")
-        .reset();
+        form.reset();
 
-    }, function(error) {
+    })
+    .catch(function(error) {
 
         alert("❌ Failed To Send Message");
 
