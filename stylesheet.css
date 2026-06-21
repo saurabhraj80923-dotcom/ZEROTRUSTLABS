@@ -845,6 +845,12 @@ span {
     animation: comingSoonBlink 1.5s ease-in-out infinite;
 }
 
+.project-card span.status-tag{
+    font-size:1.6rem;
+    animation: none;
+    text-shadow: 0 0 10px currentColor;
+}
+
 @keyframes comingSoonBlink {
     0%, 100% {
         opacity: 1;
@@ -1039,6 +1045,51 @@ span {
     overflow: hidden;
 }
 
+.certification-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.certification-grid .certification-card{
+    margin: 0;
+    padding: 3rem;
+}
+
+.badge-icon{
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 0.2rem solid rgba(47,201,255,0.4);
+    box-shadow: 0 0 20px rgba(47,201,255,0.3);
+    margin-bottom: 1.5rem;
+}
+
+.badge-icon i{
+    font-size: 2.8rem;
+    color: #2fc9ff;
+}
+
+.certification-grid .certification-card h3{
+    font-size: 2.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.certification-grid .certification-card p{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.certification-grid .certification-status{
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+}
+
 .certification-card::before {
     content: '';
     position: absolute;
@@ -1109,6 +1160,10 @@ span {
         grid-template-columns:repeat(2,1fr);
     }
 
+    .certification-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .learning-grid{
         grid-template-columns:repeat(3,1fr);
     }
@@ -1137,6 +1192,10 @@ span {
     }
 
     .project-cards{
+        grid-template-columns:1fr;
+    }
+
+    .certification-grid{
         grid-template-columns:1fr;
     }
 
@@ -1543,6 +1602,10 @@ body{
 }
 
 .project-cards{
+    grid-template-columns:1fr;
+}
+
+.certification-grid{
     grid-template-columns:1fr;
 }
 
