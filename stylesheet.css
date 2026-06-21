@@ -1848,3 +1848,7 @@ body{
     font-size:1.4rem;
     color:rgba(255,255,255,0.7);
 }
+#more-content {
+    margin-top: 15px;
+    line-height: 1.8;
+}
